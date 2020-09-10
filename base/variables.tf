@@ -16,3 +16,13 @@ variable "aws_region" {
 variable "aws_region_replica" {
   default = "eu-west-1"
 }
+
+# The role that will have access to the S3 bucket, this should be a role that all
+# members of the team have access to.
+variable "saml_role" {
+}
+
+
+# Name of the application. This value should usually match the application tag below.
+variable "app" {
+}
