@@ -13,13 +13,13 @@ variable "app_name" {
 variable "frontend_app_name" {
   type = string
   description = "Frontend App name"
-  default = "${var.app_name}-frontend"
+  default = "rovco-dp-insight-frontend"
 }
 
 variable "api_app_name" {
   type = string
   description = "API App name"
-  default = "${var.app_name}-api"
+  default = "rovco-dp-insight-api"
 }
 
 variable "env" {
