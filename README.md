@@ -1,2 +1,2 @@
-# dp_insight_infrastructure
-Terraform code for the dp_insight application
+# dp_insight_infra
+Insight Infrastructure as Code
