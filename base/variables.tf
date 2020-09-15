@@ -23,6 +23,6 @@ variable "saml_role" {
 }
 
 
-# Name of the application. This value should usually match the application tag below.
+# Name of the application.
 variable "app" {
 }
