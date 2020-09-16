@@ -14,6 +14,6 @@ module "tf_remote_state" {
     Terraform      = "True"
     dp_insight_tag = "FS"
   }
-  replica_bucket_prefix = "dp_insight_terraform_state"
-  state_bucket_prefix   = "dp_insight_terraform_state"
+  replica_bucket_prefix = "dp-insight-terraform-state-replica"
+  state_bucket_prefix   = "dp-insight-terraform-state"
 }
