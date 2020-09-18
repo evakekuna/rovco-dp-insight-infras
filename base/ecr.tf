@@ -16,12 +16,7 @@ resource "aws_ecr_repository" "app" {
 data "aws_caller_identity" "current" {
 }
 
-# grant access to saml users
-resource "aws_ecr_repository_policy" "app" {
-  repository = aws_ecr_repository.app.name
-  policy     = data.aws_iam_policy_document.ecr.json
-}
-
+# IAM policy document 
 data "aws_iam_policy_document" "ecr" {
   statement {
     actions = [
@@ -46,5 +41,19 @@ data "aws_iam_policy_document" "ecr" {
       "ecr:GetLifecyclePolicyPreview",
       "ecr:StartLifecyclePolicyPreview",
     ]
+
+    principals {
+      type = "AWS"
+
+      identifiers = var.principals_full_access
+    }
   }
 }
+
+# grant access to saml users
+resource "aws_ecr_repository_policy" "app" {
+  repository = aws_ecr_repository.app.name
+  policy     = data.aws_iam_policy_document.ecr.json
+}
+
+

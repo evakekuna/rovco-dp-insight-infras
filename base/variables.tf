@@ -22,7 +22,13 @@ variable "aws_region_replica" {
 # variable "saml_role" {
 # }
 
+variable "principals_full_access" {
+  type        = list(string)
+  description = "Principal ARNs to provide with full access to the ECR"
+  default     = []
+}
 
 # Name of the application.
 variable "app" {
+  description = "Name of the whole application"
 }
