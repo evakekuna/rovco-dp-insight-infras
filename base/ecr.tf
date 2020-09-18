@@ -41,7 +41,7 @@ data "aws_iam_policy_document" "ecr" {
       "ecr:GetLifecyclePolicyPreview",
       "ecr:StartLifecyclePolicyPreview",
     ]
-
+    
     principals {
       type = "AWS"
 
