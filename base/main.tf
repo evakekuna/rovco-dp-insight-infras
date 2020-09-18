@@ -17,7 +17,7 @@ for local development
 
 # https://www.terraform.io/docs/providers/
 provider "aws" {
-  version                 = ">= 2.23.0"
+  version                 = "~> 2.70"
   shared_credentials_file = "$HOME/.aws/credentials"
   region                  = var.aws_region
   profile                 = var.aws_profile
