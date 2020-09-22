@@ -39,3 +39,4 @@ terraform.tfstate.backup
 
 # sublime 
 *.sublime-project
+*.sublime-workspace
