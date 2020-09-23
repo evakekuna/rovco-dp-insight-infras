@@ -5,7 +5,7 @@ terraform {
     region  = "eu-west-2"
     profile = ""
     bucket  = "dp-insight-terraform-state20200917161034887200000002"
-    key     = "dev_api.terraform.tfstate"
+    key     = "ecs_api.terraform.tfstate"
   }
 }
 
