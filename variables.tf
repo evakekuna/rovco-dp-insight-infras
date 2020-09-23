@@ -3,6 +3,11 @@ variable "aws_region" {
   default     = "eu-west-2"
 }
 
+variable "env" {
+  type = string
+  default = "terraform"
+}
+
 # App vars
 variable "app_name" {
   type = string
@@ -22,11 +27,6 @@ variable "api_app_name" {
   default = "rovco-dp-insight-api"
 }
 
-variable "env" {
-  type = string
-  default = "terraform"
-}
-
 # ECS cluster vars
 
 # ECS cluster variables | ecs-cluster-variables.tf
@@ -40,4 +40,5 @@ variable "cluster_runner_count" {
   description = "Number of EC2 instances for ECS Cluster Runner"
   default = "1"
 }
+
 

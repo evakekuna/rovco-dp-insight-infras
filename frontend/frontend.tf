@@ -1,5 +1,3 @@
-
-
 resource "aws_cloudfront_origin_access_identity" "dp_insight_frontend_cloudfront_origin_access_identity" {
   comment = "${var.env} - Access Identity For Frontend App"
 }
@@ -38,7 +36,30 @@ resource "aws_iam_user_policy" "prod_user_ro" {
 EOF
 }
 
-# Here we specify the bucket
+resource "aws_s3_bucket" "dp_insight_frontend_app_s3_logging" {
+    bucket = "${var.frontend_app_name}-${var.env}-s3logging"
+    acl    = "private"
+    policy = <<POLICY
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Stmt1548256926310",
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "s3:DeleteBucket",
+      "Resource": "arn:aws:s3:::${var.frontend_app_name}-${var.env}-s3logging"
+    }
+  ]
+}
+POLICY
+}
+
+resource "aws_s3_bucket" "dp_insight_frontend_app_cloudfront_logging" {
+    bucket = "${var.frontend_app_name}-${var.env}-cloudfrontlogging"
+    acl    = "private"
+}
+
 resource "aws_s3_bucket" "dp_insight_frontend_app" {
     bucket = "${var.frontend_app_name}-${var.env}-bucket"
     acl = "private"
@@ -83,6 +104,7 @@ EOF
       index_document = "index.html"
     }
 }
+
 # Create Cloudfront distribution
 resource "aws_cloudfront_distribution" "prod_distribution" {
     origin {

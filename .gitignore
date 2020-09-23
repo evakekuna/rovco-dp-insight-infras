@@ -39,3 +39,6 @@ terraform.tfstate.backup
 
 # sublime 
 *.sublime-project
+
+# Terraforming output
+terraforming

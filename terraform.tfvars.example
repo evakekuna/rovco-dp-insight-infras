@@ -1,0 +1,11 @@
+aws_region = "eu-west-2"
+env = "terraform"
+
+app_name = "rovco-dp-insight"
+frontend_app_name = "rovco-dp-insight-frontend"
+api_app_name = "rovco-dp-insight-api"
+
+cluster_runner_type = "t3.medium"
+cluster_runner_count = "1"
+
+
