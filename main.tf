@@ -45,6 +45,13 @@ resource "aws_subnet" "default" {
   map_public_ip_on_launch = true
 }
 
+module "network" {
+  source = "./network"
+
+  app_name = var.app_name
+  env = var.env
+}
+
 module "data_storage" {
   source = "./data"
 
